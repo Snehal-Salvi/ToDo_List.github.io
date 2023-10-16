@@ -1,0 +1,284 @@
+/*---------------------------------- Variables ---------------------------------*/
+:root{
+    --text-font:fangsong;
+}
+
+/*---------------------------------- Body --------------------------------------*/
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #efdcdf;
+}
+
+/*---------------------------------Container Div ------------------------------*/
+.container-div {
+    height: 80%;
+    width: 60%;
+    text-align: center;
+    padding: 20px;
+    background-color: #efebeb;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px 0 rgb(18 17 17);
+    border-radius: 8px;
+    position: relative;
+}
+
+.heading {
+    text-align: center;
+    display: inline-block;
+    margin: 0;
+    font-size: 40px;
+    background: linear-gradient(to right, #553c9a 45%, #ee4b2b);
+    -webkit-background-clip: text; /* For older webkit browsers */
+    background-clip: text;
+    color: transparent; 
+    transition: transform 0.2s ease-in-out;
+}
+
+.heading:hover {
+    transform: scale(1.1);
+}
+
+/*-------------------------------- Toggle Button -------------------------------*/
+#toggle-button {
+    height: 20px;
+    width: 50px;
+    background-color: white;
+    border: 2px solid #a77474;
+    border-radius: 12px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: all 0.3s;
+    padding: 1px;  
+}
+
+.circle {
+    background-color: #474141;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+    cursor: pointer;
+
+}
+
+/*-------------------------------- Input Box -------------------------------------*/
+#input-box {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    background-color: #91658e;
+    border-radius: 8px;
+}
+
+.input-icon {
+    font-size: 30px;
+    margin-right: 10px; 
+    margin-left: 10px;
+}
+
+.add-task {
+    flex: 1; 
+    width: 50%; 
+    outline: none;
+    font-size: 15px;
+    padding: 11px;
+    height: 25px;
+    border: 1px solid #91658e;
+    background-color: #91658e;
+    font-family:  var(--text-font);
+    font-size: 40px;
+    color: white;
+    margin-top: 0px;
+    border-radius: 8px;
+}
+
+.add-task::placeholder {
+    color: #d3d1d1;
+    font-size: 20px;
+     font-family:  var(--text-font);
+}
+
+#add-icon {
+    display: none;
+    cursor: pointer;
+}
+
+/*---------------------------------- Status Text ------------------------------*/
+.status-text {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; 
+        color: #91658e;
+    font-size: 15px;
+     font-family:  var(--text-font);
+      cursor: pointer;
+}
+
+.status-text span:hover{
+     color: #4d3e4c;
+    font-weight: 900;
+}
+
+/*---------------------------------- List Container -------------------------------*/
+#list-container {
+    height: calc(100% - 50px); 
+    width: 100%;
+    overflow: auto; 
+}
+
+#list-items {
+    height: auto; /* Remove the fixed height */
+    width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+   color: purple;
+   font-family: var(--text-font);
+   font-size: 40px;
+}
+
+ul li {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Add this for positioning */
+}
+
+ul li:hover {
+    background: #f3f3f3;
+}
+
+#list input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+#list label {
+  position: relative;
+  cursor: pointer;
+}
+
+#list label:before {
+  content:'';
+  background-color: transparent;
+  border: 2px solid purple;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#list input:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 16px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+#list input:checked + label:before {
+  background: #b59393;
+} 
+#list input:checked + label {
+ color: #91658e;
+ text-decoration: line-through;
+
+}
+
+
+/*---------------------------------- Delete Button ------------------------------*/
+.delete {
+  color: red; 
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 30px;
+}
+
+.delete:hover {
+  color: red;
+}
+
+li:hover .delete {
+  opacity: 1;
+}
+
+/*---------------------------------- Footer Section ------------------------------*/
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+      color: #91658e;
+    font-size: 15px;
+     font-family:  var(--text-font);
+}
+
+#footer-left, #footer-right {
+    display: flex;
+    align-items: center;
+}
+
+#footer-right span {
+    margin-left: 10px; 
+    cursor: pointer;
+}
+
+#footer-right span:hover{
+    color: #4d3e4c;
+    font-weight: 900;
+}
+
+
+/*--------------------------------- Media Queries ----------------------------*/
+
+@media (max-width: 480px){
+    span{
+        font-size: 12px;
+    }
+
+    #toggle-button {
+    height: 10px;
+    width: 40px;
+    }
+
+    .circle {
+    width: 10px;
+    height: 10px;
+  }
+
+
+
+}
+
+
+
+
+

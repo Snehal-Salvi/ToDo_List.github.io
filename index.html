@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>To Do List</title>
+
+  <!-- CSS Sheet -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- FontAwesome Link -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+	<script src="https://kit.fontawesome.com/0b69d70df4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-------------------------------- Main Container ---------------------------------->
+	 <div class="container-div">
+         <h1 class="heading">To Do List</h1>
+
+<!-------------------------------- Toggle Button ---------------------------------->
+
+		<div id="btn" >
+    <div id="toggle-button">
+    	<div class="circle"></div>
+    </div>
+  </div>
+
+<!-------------------------------- List Container ---------------------------------->
+    <div id="list-container">
+
+    <!-- Input Box -->
+    <div id="input-box">
+    <span id="clip-icon" class="input-icon"><i class="fa-solid fa-clipboard-list"></i></span>
+    <input placeholder="Add a task" class="add-task" id="add" data-helloword="asdasdas" >
+    <span id="add-icon" class="input-icon"><i class="fa-solid fa-file-circle-plus"></i></span>
+    </div>
+
+      <!-- Status Text -->
+        <div class="status-text">
+           <div>
+              <i  class="fa-solid fa-check-double"></i> 
+              <span id="complete-all">Complete all tasks</span>
+            </div>
+            <div>
+               <span id="clear-completed">Clear Completed</span>
+             </div>
+        </div>
+      
+     
+      <ul id="list">
+      <!-- <li>Here List items will be added</li> -->
+      </ul> 
+      </div>
+
+<!-------------------------------- Footer Section ---------------------------------->
+  <div id="footer">
+    <div id="footer-left">
+        <span><span id="tasks-counter">0</span> Tasks Left</span>
+    </div>
+    <div id="footer-right">
+        <span id="show-all">All</span>
+        <span id="show-uncomplete">Uncomplete</span>
+        <span id="show-complete">Complete</span>
+    </div>
+  </div>
+
+</div>
+
+  <!-- JS Script -->
+	<script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
